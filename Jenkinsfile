@@ -10,6 +10,6 @@ node('jdk11-mvn3.8.6') {
         sh '/usr/local/apache-maven-3.8.6/bin/mvn clean package'
     }
     stage('archive') {
-        archive 'terget/*.jar'
+        archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
     }
 }
